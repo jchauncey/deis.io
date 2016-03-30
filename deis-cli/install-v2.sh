@@ -58,8 +58,8 @@ check_platform_arch
 VERSION="$(get_latest_version "${DEIS_VERSION_URL}")"
 DEIS_CLI="deis-${VERSION}-${PLATFORM}-${ARCH}"
 
-echo "Downloading ${DEIS_CLI} from Bintray..."
-curl -Ls "${DEIS_BIN_URL_BASE}/${DEIS_CLI}" -O
+echo "Downloading ${DEIS_CLI} from Bintray... ${DEIS_BIN_URL_BASE}/${DEIS_CLI}"
+curl -L -k "${DEIS_BIN_URL_BASE}/${DEIS_CLI}" -O
 
 chmod +x "${DEIS_CLI}"
 mv "${DEIS_CLI}" deis
